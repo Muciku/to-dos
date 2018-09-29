@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
  
@@ -16,6 +17,7 @@ Template.task.events({
 
     // Set the checked property to the opposite of its current value
 
+        Meteor.call('tasks.setChecked', this._id, !this.checked);
     Tasks.update(this._id, {
 
       $set: { checked: ! this.checked },
