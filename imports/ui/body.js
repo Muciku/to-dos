@@ -60,8 +60,7 @@ Template.body.events({
  
 
     // Insert a task into the collection
-
-    Tasks.insert({
+    Meteor.call('tasks.insert', text);    Tasks.insert({
 
       text,
 
