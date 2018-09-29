@@ -27,7 +27,7 @@ Template.task.events({
   },
 
   'click .delete'() {
-
+Meteor.call('tasks.remove', this._id);
     Tasks.remove(this._id);
 
   },
